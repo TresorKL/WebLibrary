@@ -1,0 +1,51 @@
+.container {
+  border: 5px solid red;
+  display: flex;
+  justify-content: center;
+}
+#books {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px;
+}
+
+#books td {
+  border: 1px solid #ddd;
+  height: 4vw;
+}
+button {
+  color: white;
+  padding: 0px;
+  border: 0px;
+  height: 4vw;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.submit:hover {
+  background-color: #001b64;
+}
+.btn-delete {
+  background-color: rgb(0, 0, 0);
+}
+
+.btn-delete:hover {
+  background-color: red;
+}
+.btn-edit {
+  background-color: #009882;
+}
+
+#books tr:hover {
+  background-color: #ddd;
+}
+
+#books th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+  border: 1px solid #ddd;
+}

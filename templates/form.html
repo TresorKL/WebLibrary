@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <link rel="stylesheet" href='{% static "style/market.css" %}' />
+  <style>
+    #form {
+      border: 1px solid #4072fd;
+      display: flex;
+      height: 4vw;
+      justify-content: center;
+      margin-bottom: 4vw;
+    }
+    #data {
+      display: flex;
+      justify-content: center;
+    }
+    label {
+      font-family: sans-serif;
+      font-size: 20px;
+      position: relative;
+      top: 10px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .submit {
+      position: relative;
+      left: 18px;
+      color: white;
+      padding: 0px;
+      border: 0px;
+      background-color: #214eca;
+      width: 9vw;
+      border-radius: 15px;
+    }
+  </style>
+  <body>
+    <form id="form" method="post">
+      {% csrf_token %}
+
+      <div id="data">
+        <label>AUTHOR</label>
+        {{form.author}}
+        <label>TITLE</label>
+        {{form.title}}
+        <label>PRICE</label>
+        {{form.price}}
+        <label>TYPE</label>
+        {{form.type}}
+        <input class="submit" value="ADD BOOK" type="submit" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href='{% static "style/market.css" %}' />
+  </head>
+  <body>
+    {% include 'form.html' %}
+    <div class="container">
+      <table id="books">
+        <tr>
+          <th>AUTHOR</th>
+          <th>BOOK TITLE</th>
+          <th>PRICE</th>
+          <th>TYPE</th>
+          <th>EDIT BOOK</th>
+          <th>DELETE BOOK</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+          <td>{{book.author}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.type}}</td>
+
+          <td>
+            <form method="post">
+              <button class="btn-edit" type="button" name="button">
+                EDIT BOOK
+              </button>
+            </form>
+          </td>
+          <td>
+            <a href="{% url 'delete' book.id %}">
+              <button class="btn-delete" type="button" name="button">
+                DELETE
+              </button>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
